@@ -1,0 +1,21 @@
+#!/bin/bash 
+
+#this is script that install package 
+
+read -p "enter package name " package
+if  dpkg -s $package >/dev/null 2>&1 ; then
+	echo "$package already installed"
+	exit 1
+else
+	echo " continue installing... "
+fi
+
+echo "updating system & Installing"  $package 
+sudo yum  update 
+sudo yum install $package  -y
+
+read -p " enter service name " package_name
+sudo systemctl start $package_name 
+sudo systemctl	status $package_name
+
+

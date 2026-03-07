@@ -1,0 +1,11 @@
+#!/bin/bash 
+read -p "enter you speech " word
+
+haldi(){
+	echo "haldi lagao "
+	echo "pani me daldo "
+}
+
+haldi # fuction ca
+
+echo " $word bani nhi hai " || echo " nhi bani hai "
